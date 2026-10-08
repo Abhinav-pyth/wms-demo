@@ -10,7 +10,6 @@ export const Header: React.FC = () => {
     'Northgate Distribution Center',
     'Southgate DC',
     'Westgate Warehouse',
-    'Mumbai Warehouse',
   ];
 
   return (
@@ -22,10 +21,10 @@ export const Header: React.FC = () => {
           <input
             type="text"
             placeholder="Search products, orders, shipments, trucks..."
-            className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-300 transition-all"
+            className="w-full pl-10 pr-12 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-300 transition-all"
             onFocus={() => setCommandPaletteOpen(true)}
           />
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+          <div className="absolute right-3 top-1/2 -translate-y-1/2">
             <kbd className="px-1.5 py-0.5 text-[10px] font-medium text-slate-400 bg-white border border-slate-200 rounded">⌘K</kbd>
           </div>
         </div>
@@ -39,8 +38,8 @@ export const Header: React.FC = () => {
             onClick={() => setWarehouseDropdown(!warehouseDropdown)}
             className="flex items-center gap-2 px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 hover:bg-slate-100 transition-colors"
           >
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-live" />
-            <span className="hidden md:inline max-w-[180px] truncate">{selectedWarehouse}</span>
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="hidden md:inline max-w-[180px] truncate font-medium">{selectedWarehouse}</span>
             <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
           </button>
           {warehouseDropdown && (
@@ -62,7 +61,7 @@ export const Header: React.FC = () => {
 
         {/* Live indicator */}
         <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 bg-emerald-50 border border-emerald-200 rounded-lg">
-          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-live" />
+          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
           <span className="text-xs font-medium text-emerald-700">Live</span>
         </div>
 
@@ -71,7 +70,7 @@ export const Header: React.FC = () => {
           onClick={toggleDarkMode}
           className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors"
         >
-          {darkMode ? <Sun className="w-4.5 h-4.5" /> : <Moon className="w-4.5 h-4.5" />}
+          {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         </button>
 
         {/* Command palette shortcut */}
@@ -79,12 +78,12 @@ export const Header: React.FC = () => {
           onClick={() => setCommandPaletteOpen(true)}
           className="hidden md:flex p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors"
         >
-          <Keyboard className="w-4.5 h-4.5" />
+          <Keyboard className="w-4 h-4" />
         </button>
 
         {/* Notifications */}
         <button className="relative p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
-          <Bell className="w-4.5 h-4.5" />
+          <Bell className="w-4 h-4" />
           {notifications > 0 && (
             <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">
               {notifications}
@@ -94,7 +93,7 @@ export const Header: React.FC = () => {
 
         {/* Help */}
         <button className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
-          <HelpCircle className="w-4.5 h-4.5" />
+          <HelpCircle className="w-4 h-4" />
         </button>
 
         {/* Profile */}

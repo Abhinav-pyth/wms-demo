@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { inventoryItems } from '../data/mockData';
 import { Search, Filter, Download, Upload, Plus, ChevronDown, ArrowUpDown, Package, Box, AlertTriangle } from 'lucide-react';
 
+
 export const InventoryPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');

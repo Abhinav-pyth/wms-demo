@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { chartData } from '../data/mockData';
 import { BarChart, Bar, LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { TrendingUp, Package, Truck, Clock, DollarSign, BarChart3 } from 'lucide-react';
+import { TrendingUp, Package, Clock, BarChart3 } from 'lucide-react';
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#06b6d4'];
 
@@ -38,7 +38,7 @@ export const AnalyticsPage: React.FC = () => {
         <div className="bg-white rounded-xl border border-slate-200 p-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
-              <DollarSign className="w-5 h-5 text-blue-600" />
+              <Package className="w-5 h-5 text-blue-600" />
             </div>
             <div>
               <p className="text-lg font-bold text-slate-800">$548K</p>

@@ -80,14 +80,14 @@ function App() {
   }, [setCommandPaletteOpen]);
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans">
+    <div className="min-h-screen bg-[#f8fafc] font-sans antialiased">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <div className={`transition-all duration-300 ${sidebarCollapsed ? 'ml-[68px]' : 'ml-[260px]'}`}>
+      <div className={`transition-all duration-300 ease-in-out ${sidebarCollapsed ? 'ml-[68px]' : 'ml-[260px]'}`}>
         <Header />
-        <main className="min-h-[calc(100vh-64px)]">
+        <main className="min-h-[calc(100vh-64px)] bg-[#f8fafc]">
           <PageRouter />
         </main>
       </div>
