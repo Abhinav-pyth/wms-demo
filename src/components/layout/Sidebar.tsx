@@ -43,6 +43,8 @@ const navItems = [
   { section: 'System', items: [
     { id: 'integrations', label: 'Integrations', icon: Link },
     { id: 'settings', label: 'Settings', icon: Settings },
+    { id: 'platform', label: 'Platform Admin', icon: Settings },
+    { id: 'mobile-worker', label: 'Worker Mode', icon: Users },
   ]},
 ];
 
