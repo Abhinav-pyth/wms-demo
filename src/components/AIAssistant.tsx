@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useStore } from '../store/useStore';
-import { MessageSquare, X, Send, Bot, User, Sparkles } from 'lucide-react';
+import { X, Send, Bot, User, Zap } from 'lucide-react';
 
 const mockResponses: Record<string, string> = {
   'low': '**Products running low on stock:**\n\n1. **Nitrile Gloves Large** - 234 units (reorder: 500)\n2. **HP Toner 26A** - 45 units (reorder: 30)\n3. **Cardboard Box Medium** - 1,245 units (reorder: 1,000)\n\nRecommendation: Create purchase orders for Nitrile Gloves and HP Toner immediately.',
@@ -55,7 +55,7 @@ export const AIAssistant: React.FC = () => {
       <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-white" />
+            <Zap className="w-4 h-4 text-white" />
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-800">AI Operations Assistant</p>
@@ -136,7 +136,7 @@ export const AIFloatingButton: React.FC = () => {
       onClick={() => setAiAssistantOpen(true)}
       className="fixed bottom-6 right-6 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 z-40"
     >
-      <Sparkles className="w-4.5 h-4.5" />
+      <Zap className="w-4 h-4" />
       <span className="text-sm font-medium">Ask StockFlow AI</span>
     </button>
   );

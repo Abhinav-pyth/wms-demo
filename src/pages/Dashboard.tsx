@@ -2,9 +2,9 @@ import React from 'react';
 import { WarehouseViewer3D } from '../components/warehouse/Warehouse3D';
 import { kpiData, shipments, trucks, inventoryItems, alerts } from '../data/mockData';
 import {
-  Package, Truck, Clock, ClipboardList, Warehouse as WarehouseIcon,
-  TrendingUp, TrendingDown, Minus, AlertTriangle, CheckCircle2,
-  ArrowRight, MoreHorizontal, Box, Loader2
+  Package, Truck, Clock, ClipboardList, Building,
+  TrendingUp, TrendingDown, Minus, AlertTriangle, CheckCircle,
+  ArrowRight, MoreHorizontal, Box, Loader
 } from 'lucide-react';
 
 // Sparkline Component
@@ -31,7 +31,7 @@ const KPICard: React.FC<{ data: typeof kpiData[0]; index: number }> = ({ data, i
     truck: <Truck className="w-5 h-5" />,
     clock: <Clock className="w-5 h-5" />,
     clipboard: <ClipboardList className="w-5 h-5" />,
-    warehouse: <WarehouseIcon className="w-5 h-5" />,
+    warehouse: <Building className="w-5 h-5" />,
   };
 
   const colors = ['bg-blue-50 text-blue-600', 'bg-emerald-50 text-emerald-600', 'bg-purple-50 text-purple-600', 'bg-amber-50 text-amber-600', 'bg-rose-50 text-rose-600'];
@@ -193,7 +193,7 @@ const ShipmentTracking: React.FC = () => {
               <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 ${
                 event.completed ? 'bg-blue-500 border-blue-500' : 'bg-white border-slate-300'
               }`}>
-                {event.completed && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
+                {event.completed && <CheckCircle className="w-3.5 h-3.5 text-white" />}
               </div>
               <p className="text-[10px] font-medium text-slate-700 mt-1.5">{event.label}</p>
               <p className="text-[10px] text-slate-400">{event.time}</p>
@@ -274,7 +274,7 @@ const RecentAlerts: React.FC = () => {
   const severityIcons: Record<string, React.ReactNode> = {
     critical: <AlertTriangle className="w-4 h-4 text-red-500" />,
     warning: <AlertTriangle className="w-4 h-4 text-amber-500" />,
-    info: <Loader2 className="w-4 h-4 text-blue-500" />,
+    info: <Loader className="w-4 h-4 text-blue-500" />,
   };
 
   return (
@@ -315,14 +315,16 @@ export const Dashboard: React.FC = () => {
   return (
     <div className="p-6 max-w-[1600px] mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Warehouse Overview</h1>
+          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Warehouse Overview</h1>
           <p className="text-sm text-slate-500 mt-0.5">Real-time operational intelligence</p>
         </div>
-        <div className="text-right">
-          <p className="text-sm font-medium text-slate-700">{dateStr}</p>
-          <p className="text-xs text-slate-500">{timeStr}</p>
+        <div className="flex items-center gap-3">
+          <div className="text-right">
+            <p className="text-sm font-medium text-slate-700">{dateStr}</p>
+            <p className="text-xs text-slate-500">{timeStr}</p>
+          </div>
         </div>
       </div>
 

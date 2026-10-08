@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { orders, shipments, forklifts, workers, alerts as alertsData } from '../data/mockData';
 import {
-  ArrowDownToLine, ArrowUpFromLine, ScanLine, PackageCheck, Send,
-  CheckCircle2, Clock, AlertCircle, Truck, Box, ChevronRight,
-  Plus, Filter, Search, User, Battery, MapPin, MoreVertical
+  ArrowDownToLine, ArrowUpFromLine, Scan, PackageCheck, Send,
+  CheckCircle, Clock, AlertCircle, Truck, Box, ChevronRight,
+  Plus, Filter, Search, User, Battery, MapPin
 } from 'lucide-react';
 
 // Receiving Page
 export const ReceivingPage: React.FC = () => {
   const stats = [
     { label: 'Expected Today', value: 12, icon: <ArrowDownToLine className="w-5 h-5 text-blue-600" />, bg: 'bg-blue-50' },
-    { label: 'Received', value: 7, icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, bg: 'bg-emerald-50' },
+    { label: 'Received', value: 7, icon: <CheckCircle className="w-5 h-5 text-emerald-600" />, bg: 'bg-emerald-50' },
     { label: 'Pending', value: 5, icon: <Clock className="w-5 h-5 text-amber-600" />, bg: 'bg-amber-50' },
     { label: 'Damaged', value: 2, icon: <AlertCircle className="w-5 h-5 text-red-600" />, bg: 'bg-red-50' },
   ];
@@ -141,13 +141,13 @@ export const PickingPage: React.FC = () => {
         </div>
         <div className="bg-white rounded-xl border border-slate-200 p-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center"><ScanLine className="w-5 h-5 text-blue-600" /></div>
+            <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center"><Scan className="w-5 h-5 text-blue-600" /></div>
             <div><p className="text-lg font-bold text-slate-800">{picks.filter(p => p.status === 'picking').length}</p><p className="text-[11px] text-slate-500">Active Picks</p></div>
           </div>
         </div>
         <div className="bg-white rounded-xl border border-slate-200 p-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center"><CheckCircle2 className="w-5 h-5 text-emerald-600" /></div>
+            <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center"><CheckCircle className="w-5 h-5 text-emerald-600" /></div>
             <div><p className="text-lg font-bold text-slate-800">{picks.filter(p => p.status === 'completed').length}</p><p className="text-[11px] text-slate-500">Completed</p></div>
           </div>
         </div>
@@ -214,7 +214,7 @@ export const PackingPage: React.FC = () => (
             <div key={i} className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:bg-slate-50">
               <div className="flex items-center gap-3">
                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${item.packed ? 'bg-emerald-50' : 'bg-slate-50'}`}>
-                  {item.packed ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Box className="w-4 h-4 text-slate-400" />}
+                  {item.packed ? <CheckCircle className="w-4 h-4 text-emerald-500" /> : <Box className="w-4 h-4 text-slate-400" />}
                 </div>
                 <div>
                   <p className="text-xs font-medium text-slate-800">{item.name}</p>
